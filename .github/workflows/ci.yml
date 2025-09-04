@@ -26,6 +26,7 @@ jobs:
           docker build -t fitness-tracker-app:latest .
 
       # 4. Run tests inside container
-      - name: Run Pytest in container
+      - name: Run Pytest and Coverage in container
         run: |
-          docker run --rm fitness-tracker-app:latest pytest -v
+          docker run --rm fitness-tracker-app:latest coverage run -m pytest
+          docker run --rm fitness-tracker-app:latest coverage report

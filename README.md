@@ -43,6 +43,16 @@ This is a simple Tkinter-based fitness tracker application for logging workouts,
    ```
    This will execute all unit tests and display results in the terminal.
 
+   To check test coverage for your Python project, use the coverage package:
+
+    Install coverage (in your venv): pip install coverage
+    Run your tests with coverage: coverage run -m unittest tests/test_app.py
+    Generate a coverage report: coverage report
+    For an HTML report: coverage report
+    Then open htmlcov/index.html in your browser to view detailed coverage.
+
+    This will show you how much of your code is covered by your tests.
+
 ## GitHub Actions Pipeline
 - The repository includes a sample GitHub Actions workflow (`.github/workflows/python-app.yml`) that:
   - Sets up Python
