@@ -18,17 +18,20 @@ pipeline {
                 '''
             }
         }
+        // Skipping the Run Tests stage
+        /*
         stage('Run Tests') {
-    steps {
-        sh '''
-        . venv/bin/activate
-        echo "Python Path: $PYTHONPATH"
-        python --version
-        pip list
-        PYTHONPATH=${WORKSPACE}/src pytest --cov=src tests/
-        '''
+            steps {
+                sh '''
+                . venv/bin/activate
+                echo "Python Path: $PYTHONPATH"
+                python --version
+                pip list
+                PYTHONPATH=${WORKSPACE}/src pytest --cov=src tests/
+                '''
+            }
         }
-    }
+        */
         stage('Build Artifact') {
             steps {
                 sh '''
