@@ -19,14 +19,13 @@ pipeline {
             }
         }
         stage('Run Tests') {
-            steps {
-                sh '''
-                . venv/bin/activate
-                export PYTHONPATH=${WORKSPACE}/src
-                pytest --cov=src tests/
-                '''
-            }
-        }
+    steps {
+        sh '''
+        . venv/bin/activate
+        PYTHONPATH=${WORKSPACE}/src pytest --cov=src tests/
+        '''
+    }
+}
         stage('Build Artifact') {
             steps {
                 sh '''
