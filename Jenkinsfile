@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PYTHONPATH = "${WORKSPACE}/src" // Add the src directory to PYTHONPATH
+    }
     stages {
         stage('Clone Repository') {
             steps {
