@@ -2,10 +2,10 @@ pipeline {
     agent any
     stages {
         stage('Clone Repository') {
-            steps {
-                git 'https://github.com/devu2456/fitness-tracker-app.git'
-            }
-        }
+    steps {
+        git branch: 'main', url: 'https://github.com/devu2456/fitness-tracker-app.git'
+    }
+}
         stage('Install Dependencies') {
             steps {
                 sh 'pip install -r requirements.txt'
