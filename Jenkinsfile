@@ -22,6 +22,7 @@ pipeline {
             steps {
                 sh '''
                 . venv/bin/activate
+                export PYTHONPATH=${WORKSPACE}/src
                 pytest --cov=src tests/
                 '''
             }
