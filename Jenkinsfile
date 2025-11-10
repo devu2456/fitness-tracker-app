@@ -32,6 +32,15 @@ pipeline {
             }
         }
         */
+        stage('Build Docker Image') {
+            steps {
+                sh '''
+                docker build -t devu2456/fitness-tracker-app:latest .
+                docker login -u devu2456 -p docker2456
+                docker push devu2456/fitness-tracker-app:latest
+                '''
+            }
+        }
         stage('Build Artifact') {
             steps {
                 sh '''
