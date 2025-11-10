@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import MagicMock, patch, mock_open
 import json
 import datetime
+import src.app as app_module
 
 # Patch tkinter before importing your app
 with patch.dict("sys.modules", {

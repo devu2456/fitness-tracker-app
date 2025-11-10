@@ -22,10 +22,13 @@ pipeline {
     steps {
         sh '''
         . venv/bin/activate
+        echo "Python Path: $PYTHONPATH"
+        python --version
+        pip list
         PYTHONPATH=${WORKSPACE}/src pytest --cov=src tests/
         '''
+        }
     }
-}
         stage('Build Artifact') {
             steps {
                 sh '''
